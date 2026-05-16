@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static int tinhtong(int a, int b)
+        {
+            return a +b; 
+        }
+        static void Main(string[] args)
+        {
+            int so_01 = 15;
+            int so_02 = 25;
+
+            int ketqua = tinhtong(so_01, so_02);
+            Console.WriteLine($"tong cua {so_01} va {so_02} la: {ketqua}");
+            Console.WriteLine();
+        }
+    }
+}
