@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai18
+{
+    internal class Program
+    {
+        static string DecimalToBinary(int n)
+        {
+            if (n == 0) return "0";
+
+            string binary = "";
+            while (n > 0)
+            {
+                int soDu = n % 2;
+                binary = soDu + binary; // Cộng chuỗi ngược để không cần đảo mảng
+                n /= 2;
+            }
+            return binary;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(DecimalToBinary(10)); // Output: "1010"
+        }
+    }
+}
