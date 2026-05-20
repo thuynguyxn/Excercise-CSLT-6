@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai5
+{
+    internal class Program
+    {
+        static string DaoNguocChuoi(string input)
+        {
+            // 1. Chuyển chuỗi thành mảng ký tự
+            char[] charArray = input.ToCharArray();
+
+            // 2. Đảo ngược các phần tử trong mảng
+            Array.Reverse(charArray);
+
+            // 3. Khởi tạo chuỗi mới từ mảng đã đảo và trả về
+            return new string(charArray);
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap vao chuoi can dao nguoc: ");
+            string text = Console.ReadLine();
+
+            string chuoiDaoNguoc = DaoNguocChuoi(text);
+            Console.WriteLine($"Chuoi sau khi dao nguoc: {chuoiDaoNguoc}");
+        }
+    }
+}
