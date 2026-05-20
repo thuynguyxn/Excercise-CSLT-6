@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai19
+{
+    internal class Program
+    {
+        static bool KiemTraNamNhuan(int year)
+        {
+            // Trả về trực tiếp biểu thức logic điều kiện năm nhuận
+            return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(KiemTraNamNhuan(2024)); // Output: True
+            //Console.WriteLine(KiemTraNamNhuan(2023)); // Output: False
+        }
+    }
+}
