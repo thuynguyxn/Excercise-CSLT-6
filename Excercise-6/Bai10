@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai10
+{
+    internal class Program
+    {
+        static double TinhTrungBinh(int[] arr)
+        {
+            if (arr.Length == 0) return 0;
+
+            int tong = 0;
+            foreach (int x in arr)
+            {
+                tong += x;
+            }
+            // Ép kiểu sang double để lấy kết quả số thực chính xác
+            return (double)tong / arr.Length;
+        }
+        static void Main(string[] args)
+        {
+            int[] mang = { 4, 5, 6, 7 };
+            Console.WriteLine($"Trung binh: {TinhTrungBinh(mang)}"); // Output: 5.5
+        }
+    }
+}
