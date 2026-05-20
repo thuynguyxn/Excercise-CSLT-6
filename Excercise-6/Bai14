@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai14
+{
+    internal class Program
+    {
+        static int TongCacChuSo(int n)
+        {
+            int tong = 0;
+            n = Math.Abs(n); // Xử lý trường hợp nếu n là số âm
+
+            while (n > 0)
+            {
+                tong += n % 10; // Lấy chữ số hàng đơn vị cộng vào tổng
+                n /= 10;        // Bỏ chữ số hàng đơn vị vừa lấy
+            }
+            return tong;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(TongCacChuSo(1234)); // Output: 10
+        }
+    }
+}
