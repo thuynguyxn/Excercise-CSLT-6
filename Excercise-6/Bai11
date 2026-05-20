@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai11
+{
+    internal class Program
+    {
+        static bool KiemTraDoiXung(string s)
+        {
+            int dau = 0;
+            int cuoi = s.Length - 1;
+
+            while (dau < cuoi)
+            {
+                if (s[dau] != s[cuoi]) return false;
+                dau++;
+                cuoi--;
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(KiemTraDoiXung("radar")); // Output: True
+            Console.WriteLine(KiemTraDoiXung("hello")); // Output: False
+        }
+    }
+}
