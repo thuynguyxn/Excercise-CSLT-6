@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai6
+{
+    internal class Program
+    {
+        static bool KiemTraNguyenTo(int n)
+        {
+            if (n <= 1) return false; // Số nhỏ hơn hoặc bằng 1 không phải số nguyên tố
+            if (n == 2) return true;  // Số 2 là số nguyên tố chẵn duy nhất
+
+            // Chạy từ 2 đến căn bậc hai của n
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0) return false; // Nếu chia hết cho số bất kỳ thì không phải số nguyên tố
+            }
+            return true;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Ket qua: {KiemTraNguyenTo(n)}");
+        }
+    }
+}
