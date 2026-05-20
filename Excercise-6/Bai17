@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai17
+{
+    internal class Program
+    {
+        static int UCLN(int a, int b)
+        {
+            while (b != 0)
+            {
+                int r = a % b; // Tìm số dư
+                a = b;         // Gán b cho a
+                b = r;         // Gán số dư cho b
+            }
+            return a;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(UCLN(12, 18)); // Output: 6
+        }
+    }
+}
