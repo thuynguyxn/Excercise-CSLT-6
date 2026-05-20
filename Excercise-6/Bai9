@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai9
+{
+    internal class Program
+    {
+        static double TinhLuyThua(double x, int y)
+        {
+            double ketQua = 1.0;
+            // Lấy giá trị tuyệt đối của số mũ để chạy vòng lặp
+            int soMuTuyetDoi = Math.Abs(y);
+
+            for (int i = 0; i < soMuTuyetDoi; i++)
+            {
+                ketQua *= x; // Nhân dồn x
+            }
+
+            // Nếu số mũ y ban đầu là số âm, ta lấy 1 chia cho kết quả
+            if (y < 0)
+            {
+                return 1.0 / ketQua;
+            }
+
+            return ketQua;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap co so x: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Nhap so mu y: ");
+            int y = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine($"{x}^{y} = {TinhLuyThua(x, y)}");
+        }
+    }
+}
