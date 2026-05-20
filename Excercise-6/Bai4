@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai4
+{
+    internal class Program
+    {
+        // Sử dụng kiểu long cho kết quả trả về
+        static long TinhGiaiThua(int n)
+        {
+            long ketQua = 1;
+
+            for (int i = 1; i <= n; i++)
+            {
+                ketQua *= i; // Nhân dồn từ 1 đến n
+            }
+
+            return ketQua;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap vao mot so nguyen duong n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            if (n < 0)
+            {
+                Console.WriteLine("Vui long nhap so lon hon hoac bang 0!");
+            }
+            else
+            {
+                long giaiThua = TinhGiaiThua(n);
+                Console.WriteLine($"{n}! = {giaiThua}");
+            }
+        }
+    }
+}
