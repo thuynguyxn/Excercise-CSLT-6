@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai20
+{
+    internal class Program
+    {
+        static int DemSoTu(string sentence)
+        {
+            if (string.IsNullOrWhiteSpace(sentence)) return 0;
+
+            // Tách chuỗi theo các khoảng trắng ký tự và loại bỏ khoảng trắng rỗng thừa
+            string[] cacTu = sentence.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+            return cacTu.Length;
+        }
+        static void Main(string[] args)
+        {
+            string cau = "Học lập trình C# rất thú vị";
+        Console.WriteLine($"So tu: {DemSoTu(cau)}"); // Output: 7
+        }
+    }
+}
