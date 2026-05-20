@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai13
+{
+    internal class Program
+    {
+        static int TimMin(int[] arr)
+        {
+            // Giả định phần tử đầu tiên là nhỏ nhất
+            int min = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                {
+                    min = arr[i]; // Cập nhật lại giá trị nhỏ nhất
+                }
+            }
+            return min;
+        }
+        static void Main(string[] args)
+        {
+            int[] mang = { 10, 5, 8, 2, 9 };
+            Console.WriteLine($"Gia tri nho nhat: {TimMin(mang)}"); // Output: 2
+        }
+    }
+}
