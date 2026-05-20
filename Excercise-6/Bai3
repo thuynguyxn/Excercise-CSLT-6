@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai3
+{
+    internal class Program
+    {
+        // Đã đổi tên hàm thành TimSoLonNhat để tránh lỗi trùng lặp/sai sót
+        static int TimSoLonNhat(int a, int b, int c)
+        {
+            int max = a; // Giả sử a lớn nhất
+
+            if (b > max) max = b; // Nếu b lớn hơn max thì cập nhật max
+            if (c > max) max = c; // Nếu c lớn hơn max thì cập nhật max
+
+            return max;
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap so thu nhat (a): ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap so thu hai (b): ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap so thu ba (c): ");
+            int c = Convert.ToInt32(Console.ReadLine());
+
+            int ketQua = TimSoLonNhat(a, b, c);
+            Console.WriteLine($"So lon nhat trong 3 so la: {ketQua}");
+        }
+    }
+}
