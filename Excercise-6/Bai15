@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai15
+{
+    internal class Program
+    {
+        static void SapXepMang(int[] arr)
+        {
+            // Thuật toán sắp xếp nổi bọt cơ bản
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        // Hoán vị 2 phần tử
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+
+            // In mảng sau khi sắp xếp
+            foreach (int x in arr)
+            {
+                Console.Write(x + " ");
+            }
+            Console.WriteLine();
+        }
+        static void Main(string[] args)
+        {
+            int[] mang = { 3, 1, 4, 2 };
+            SapXepMang(mang); // Output: 1 2 3 4
+        }
+    }
+}
